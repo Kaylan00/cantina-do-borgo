@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante</title>
+  <meta name="description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo" id="navLogo"></a>
+      <ul class="nav-links" id="navLinks"></ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-bg"><img id="heroImg" src="" alt="" loading="eager"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" id="heroContent"></div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Explorar</span><div class="scroll-line"></div>
+    </div>
+    <div class="hero-info-bar" id="heroInfoBar"></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visuals" data-reveal="left"  id="aboutVisuals"></div>
+        <div class="about-text"    data-reveal="right" id="aboutText"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section id="cardapio" class="menu-section">
+    <div class="container">
+      <div class="section-header" data-reveal id="menuHeader"></div>
+      <div class="menu-tabs"   id="menuTabs"></div>
+      <div class="menu-panels" id="menuPanels"></div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid" id="featuresGrid"></div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="gallery">
+    <div class="container">
+      <div class="section-header" data-reveal id="galeriaHeader"></div>
+    </div>
+    <div class="gallery-grid" data-reveal id="galeriaGrid"></div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header" data-reveal id="depHeader"></div>
+      <div class="testimonials-grid" id="depGrid"></div>
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
+  <section id="reservas" class="reservations">
+    <div class="container">
+      <div class="reservations-inner">
+        <div class="reservations-text" data-reveal id="reservasText"></div>
+        <div class="reservation-form-wrap" data-reveal>
+          <form class="reservation-form" id="reservationForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="r-nome">Nome completo</label>
+                <input type="text" id="r-nome" name="nome" placeholder="Seu nome" required>
+              </div>
+              <div class="form-group">
+                <label for="r-tel">Telefone</label>
+                <input type="tel" id="r-tel" name="telefone" placeholder="(00) 00000-0000" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="r-data">Data</label>
+                <input type="date" id="r-data" name="data" required>
+              </div>
+              <div class="form-group">
+                <label for="r-hora">Horário</label>
+                <select id="r-hora" name="horario" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option>12:00</option><option>12:30</option><option>13:00</option>
+                  <option>13:30</option><option>14:00</option><option>19:00</option>
+                  <option>19:30</option><option>20:00</option><option>20:30</option>
+                  <option>21:00</option><option>21:30</option><option>22:00</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="r-pessoas">Número de pessoas</label>
+              <select id="r-pessoas" name="pessoas" required>
+                <option value="" disabled selected>Selecione</option>
+                <option>1 pessoa</option><option>2 pessoas</option>
+                <option>3 pessoas</option><option>4 pessoas</option>
+                <option>5 pessoas</option><option>6 pessoas</option>
+                <option>7 – 10 pessoas</option><option>Mais de 10</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="r-obs">Observações (opcional)</label>
+              <textarea id="r-obs" name="mensagem" rows="3"
+                placeholder="Alergias, ocasião especial, preferências..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold btn-full">Confirmar Reserva</button>
+            <div class="form-success" id="formSuccess">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              <span>Reserva enviada! Entraremos em contato em breve.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato" class="footer">
+    <div class="container">
+      <div class="footer-grid"   id="footerGrid"></div>
+      <div class="footer-bottom" id="footerBottom"></div>
+    </div>
+  </footer>
+
+  <!-- MODAL: foto do produto ao clicar no item do cardápio -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="modal-img-wrap">
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="modal-body">
+        <div class="modal-header-row">
+          <div>
+            <h3 id="modalName" class="modal-name"></h3>
+            <p  id="modalDesc" class="modal-desc"></p>
+          </div>
+          <span id="modalPrice" class="modal-price"></span>
+        </div>
+        <a id="modalWa" href="#" target="_blank" rel="noopener" class="btn btn-whatsapp btn-full">
+          <svg viewBox="0 0 32 32" fill="currentColor" width="18" height="18">
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.83.739 5.486 2.031 7.794L.071 31.929l8.378-2.197A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.773-1.854l-.486-.288-5.032 1.32 1.343-4.906-.32-.508A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.274-9.824c-.398-.199-2.353-1.161-2.718-1.293-.365-.132-.63-.198-.896.199-.266.397-1.03 1.293-1.262 1.559-.232.265-.465.298-.863.099-.398-.199-1.682-.62-3.203-1.977-1.183-1.055-1.981-2.358-2.213-2.755-.232-.397-.024-.612.175-.81.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.132-.265.066-.497-.033-.696-.1-.199-.896-2.16-1.228-2.956-.323-.776-.651-.671-.896-.684-.232-.012-.497-.015-.763-.015-.265 0-.696.099-1.061.497-.365.397-1.394 1.361-1.394 3.319s1.427 3.848 1.626 4.114c.199.265 2.808 4.284 6.805 6.012.951.41 1.692.655 2.27.837.954.302 1.822.26 2.508.158.765-.114 2.353-.962 2.685-1.892.332-.93.332-1.727.232-1.892-.1-.166-.365-.265-.763-.464z"/>
+          </svg>
+          Pedir no WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÕES FLUTUANTES -->
+  <a class="floating-wa" id="floatingWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" width="26" height="26">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.83.739 5.486 2.031 7.794L.071 31.929l8.378-2.197A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.274 19.509c-.398-.199-2.353-1.161-2.718-1.293-.365-.132-.63-.198-.896.199-.266.397-1.03 1.293-1.262 1.559-.232.265-.465.298-.863.099-.398-.199-1.682-.62-3.203-1.977-1.183-1.055-1.981-2.358-2.213-2.755-.232-.397-.024-.612.175-.81.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.132-.265.066-.497-.033-.696-.1-.199-.896-2.16-1.228-2.956-.323-.776-.651-.671-.896-.684-.232-.012-.497-.015-.763-.015-.265 0-.696.099-1.061.497-.365.397-1.394 1.361-1.394 3.319s1.427 3.848 1.626 4.114c.199.265 2.808 4.284 6.805 6.012.951.41 1.692.655 2.27.837.954.302 1.822.26 2.508.158.765-.114 2.353-.962 2.685-1.892.332-.93.332-1.727.232-1.892-.1-.166-.365-.265-.763-.464z"/>
+    </svg>
+  </a>
+
+  <a class="floating-reserva" id="floatingReserva" href="#reservas">
+    <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+      <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Reservar</span>
+  </a>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
