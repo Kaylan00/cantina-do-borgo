@@ -42,7 +42,7 @@
 
 /* ── Reset ─────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html  { scroll-behavior: smooth; font-size: 16px; }
+html  { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body  { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-weight: 400; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 img   { display: block; max-width: 100%; height: auto; }
 a     { text-decoration: none; color: inherit; }
@@ -239,6 +239,7 @@ textarea, input, select { font-family: inherit; }
 .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px,4.5px); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px,-4.5px); }
+.nav-toggle.open span { background: var(--text); }
 
 .nav-backdrop {
   display: none;
