@@ -161,9 +161,17 @@ textarea, input, select { font-family: inherit; }
 }
 .navbar.scrolled {
   background: rgba(250,247,242,.96);
-  backdrop-filter: blur(14px);
   box-shadow: var(--shadow-sm);
   padding: .9rem 0;
+}
+.navbar.scrolled::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: none;
+  z-index: -1;
 }
 .nav-container {
   width: min(1200px, 92vw);
