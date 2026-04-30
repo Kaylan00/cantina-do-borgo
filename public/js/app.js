@@ -388,21 +388,35 @@ function setupNavScroll() {
 }
 
 function setupMobileNav() {
-  const toggle = document.getElementById('navToggle');
-  const links  = document.getElementById('navLinks');
+  const toggle   = document.getElementById('navToggle');
+  const links    = document.getElementById('navLinks');
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'nav-backdrop';
+  document.body.appendChild(backdrop);
+
+  function closeNav() {
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
   toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
+    const isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    backdrop.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  backdrop.addEventListener('click', closeNav);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeNav();
   });
 
   links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    a.addEventListener('click', closeNav);
   });
 }
 
